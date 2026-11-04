@@ -67,13 +67,16 @@
 
 
 
+/* ---- 2. 768px and up (tablets) ---- */
+@media (min-width: 768px) {
+  .container {
+    padding-inline: 2rem;
+  }
 
-
-/* ---- 2. 768px and up (tablets) ---------------------------------------
-   TODO @media (min-width: 768px)
-        .container            wider side padding (2rem)
-        .brand-panel          more padding (2rem)
-   -------------------------------------------------------------------- */
+  .brand-panel {
+    padding: 2rem;
+  }
+}
 
 
 
