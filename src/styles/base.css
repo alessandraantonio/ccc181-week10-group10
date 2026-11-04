@@ -16,19 +16,55 @@
    -------------------------------------------------------------------- */
 
 
-/* ---- 1. PHONE (no media query) ---------------------------------------
-   TODO .page                 min-height: 100vh; display: flex; flex-direction: column;
-   TODO .page > main          flex: 1;   (keeps the footer at the bottom)
-   TODO .container            width: 100%; side padding 1rem (padding-inline)
-   TODO .login-layout         display: grid; ONE column (1fr); gap 1.5rem;
-                              top and bottom padding 1.5rem
-   TODO .brand-panel          background var(--navy); color #fff; text centered;
-                              padding 1.5rem 1rem; border-radius var(--radius)
-   TODO .brand-panel__badge   small gold "pill": inline-block, background var(--gold),
-                              navy text, bold, 0.875rem, border-radius: 999px
-   TODO .brand-panel__title   font-size: 1.75rem
-   TODO .brand-panel__perks   display: none   (phones show only what matters most)
-   -------------------------------------------------------------------- */
+
+/* ---- 1. PHONE (no media query) ---- */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page > main {
+  flex: 1; 
+}
+
+.container {
+  width: 100%;
+  padding-inline: 1rem;
+}
+
+.login-layout {
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 1.5rem;
+  padding-block: 1.5rem;
+}
+
+.brand-panel {
+  background: var(--navy);
+  color: #fff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  border-radius: var(--radius);
+}
+
+.brand-panel__badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.875rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.brand-panel__title {
+  font-size: 1.75rem;
+}
+
+.brand-panel__perks {
+  display: none;
+
 
 
 
