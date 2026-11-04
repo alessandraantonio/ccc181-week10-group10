@@ -31,7 +31,7 @@ npm run build        # must finish with no errors before you submit
 
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
-| 1 (leader) |Alessandra M. Antonio | alessandrantonio | `base.css` | Wrote the base page layout: container, CSS Grid for .login-layout (1 column on phone, 2 columns from 1024px), brand panel styles, the 1280px max-width of 1200px, and added the viewport meta tag.|
+| 1 (leader) |Alessandra M. Antonio | alessandraantonio | `base.css` | Wrote the base page layout: container, CSS Grid for .login-layout (1 column on phone, 2 columns from 1024px), brand panel styles, the 1280px max-width of 1200px, and added the viewport meta tag.|
 | 2 | | | `nav.css` | |
 | 3 | | | `form.css` | |
 
