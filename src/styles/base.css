@@ -106,9 +106,11 @@
 }
 
 
+/* ---- 4. 1280px and up (desktops) ---- */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
 
-
-/* ---- 4. 1280px and up (desktops) -------------------------------------
-   TODO @media (min-width: 1280px)
-        .container            max-width: 1200px; centered (margin-inline: auto)
-   -------------------------------------------------------------------- */
