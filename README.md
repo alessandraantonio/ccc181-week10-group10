@@ -33,7 +33,7 @@ npm run build        # must finish with no errors before you submit
 | --- | --- | --- | --- | --- |
 | 1 (leader) |Alessandra M. Antonio | alessandraantonio | `base.css` | Wrote the base page layout: container, CSS Grid for .login-layout (1 column on phone, 2 columns from 1024px), brand panel styles, the 1280px max-width of 1200px, and added the viewport meta tag.|
 | 2 | | | `nav.css` | |
-| 3 | | | `form.css` | |
+| 3 | Cluden F. Bacalso | clud130 | `form.css` | Wrote the login card and form styles with Flexbox: stacked full-width fields with 48px inputs and 16px text, the Show/Hide button next to the password input, and primary and secondary buttons with hover and focus styles. From 768px the card is max-width 32rem and centered, the checkbox and "Forgot password?" sit side by side, and the two bottom buttons sit side by side. From 1024px the card gets 2.5rem padding. |
 
 ## Experiment 0: the page without the viewport tag
 
