@@ -205,3 +205,25 @@
   flex-direction: column;
   gap: 0.5rem;
 }
+
+/* ---- 2. 768px and up (tablets) --------------------------------------- */
+@media (min-width: 768px) {
+  .login-card {
+    max-width: 32rem;
+    margin-inline: auto;
+    padding: 2rem;
+  }
+
+  /* Checkbox LEFT, link RIGHT */
+  .form-options {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Two buttons SIDE BY SIDE */
+  .alt-actions {
+    flex-direction: row;
+  }
+}
+
