@@ -46,10 +46,10 @@ What changed **after** adding it?
 
 | Width | What must be true | Pass? |
 | --- | --- | --- |
-| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
-| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
-| 1280 px | Content centered and stops at 1200px. | |
+| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | Pass |
+| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | Pass |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | Pass |
+| 1280 px | Content centered and stops at 1200px. | Pass |
 
 ### Breakpoints I observed
 
