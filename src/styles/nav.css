@@ -129,3 +129,18 @@
     gap: 0.5rem;
   }
 }
+
+
+/* ---- 3. 1024px and up (laptops) -------------------------------------- */
+@media (min-width: 1024px) {
+  /* Footer: three equal columns */
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+
+/* ---- 4. 1280px and up ------------------------------------------------
+   Nothing new here: .container (base.css) keeps the content centered.
+   -------------------------------------------------------------------- */
