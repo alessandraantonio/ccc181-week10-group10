@@ -1,30 +1,27 @@
 /* =================================
-   FOOTER - MOBILE FIRST
+   TABLET - 768px
 ================================= */
 
-.footer {
-    width: 100%;
-    padding: 2rem 1rem;
-}
+@media (min-width: 768px) {
 
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-}
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.footer-column {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
+    .navbar-brand {
+        text-align: left;
+    }
 
-.footer a {
-    text-decoration: none;
-}
+    .nav-links {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+    }
 
-.footer a:hover,
-.footer a:focus-visible {
-    text-decoration: underline;
-}
+    .nav-links a {
+        width: auto;
+        padding: 0.75rem 1rem;
+    }
 
+}
