@@ -1,41 +1,19 @@
 /* =================================
 
-   TABLET - 768px
+   DESKTOP - 1024px
 
 ================================= */
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
 
-    .navbar {
+    .footer-grid {
 
-        flex-direction: row;
+        grid-template-columns: repeat(3, 1fr);
 
-        justify-content: space-between;
-
-    }
-
-    .navbar-brand {
-
-        text-align: left;
+        gap: 2rem;
 
     }
 
-    .nav-links {
-
-        flex-direction: row;
-
-        justify-content: flex-end;
-
-        width: auto;
-
-    }
-
-    .nav-links a {
-
-        width: auto;
-
-        padding: 0.75rem 1rem;
-
-    }
+}
 
 }
