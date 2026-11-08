@@ -1,7 +1,7 @@
 /* =======================================================================
    MEMBER 1  |  base.css  |  Base, container, page layout, brand panel (CSS Grid + rem)
    Branch: feature/base-<lastname>
-   -----------------------------------------------------------------------
+   ----------------------------------------------------------------------
    MOBILE-FIRST RULES
    1. Write the PHONE styles first, with NO media query.
    2. Use min-width media queries ONLY. Never max-width.
