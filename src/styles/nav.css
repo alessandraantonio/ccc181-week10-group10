@@ -1,4 +1,110 @@
 /* =================================
+   NAVIGATION - MOBILE FIRST
+================================= */
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    width: 100%;
+    text-decoration: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    background-color: var(--light-blue);
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+}
+
+
+/* =================================
+   FOOTER - MOBILE FIRST
+================================= */
+
+.footer {
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer a {
+    text-decoration: none;
+}
+
+.footer a:hover,
+.footer a:focus-visible {
+    text-decoration: underline;
+}
+
+
+/* =================================
+   TABLET - 768px
+================================= */
+
+@media (min-width: 768px) {
+
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar-brand {
+        text-align: left;
+    }
+
+    .nav-links {
+        flex-direction: row;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .nav-links a {
+        width: auto;
+        padding: 0.75rem 1rem;
+    }
+
+}
+
+
+/* =================================
    DESKTOP - 1024px
 ================================= */
 
