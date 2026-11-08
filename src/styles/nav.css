@@ -1,47 +1,41 @@
-   /* =================================
+/* =================================
 
-   FOOTER - MOBILE FIRST
+   TABLET - 768px
 
 ================================= */
 
-.footer {
+@media (min-width: 768px) {
 
-    width: 100%;
+    .navbar {
 
-    padding: 2rem 1rem;
+        flex-direction: row;
 
-}
+        justify-content: space-between;
 
-.footer-grid {
+    }
 
-    display: grid;
+    .navbar-brand {
 
-    grid-template-columns: 1fr;
+        text-align: left;
 
-    gap: 1.5rem;
+    }
 
-}
+    .nav-links {
 
-.footer-column {
+        flex-direction: row;
 
-    display: flex;
+        justify-content: flex-end;
 
-    flex-direction: column;
+        width: auto;
 
-    gap: 0.5rem;
+    }
 
-}
+    .nav-links a {
 
-.footer a {
+        width: auto;
 
-    text-decoration: none;
+        padding: 0.75rem 1rem;
 
-}
-
-.footer a:hover,
-
-.footer a:focus-visible {
-
-    text-decoration: underline;
+    }
 
 }
