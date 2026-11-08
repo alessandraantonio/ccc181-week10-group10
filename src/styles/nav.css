@@ -1,146 +1,73 @@
-/* =======================================================================
-   MEMBER 2  |  nav.css  |  Navigation bar (Flexbox) + footer (CSS Grid)
-   Branch: feature/nav-patagoc
-   Mobile-first: phone styles first (no media query), then min-width only.
-   Side padding and max-width come from .container (base.css).
-   ======================================================================= */
+   NAVIGATION - MOBILE FIRST
 
-
-/* ---- 1. PHONE (no media query) --------------------------------------- */
-
-/* NAVBAR (Flexbox, a column on phones) */
-.site-header {
-  background: var(--navy);
-  color: #fff;
-}
+================================= */
 
 .navbar {
-  display: flex;
-  flex-direction: column;
-  padding-block: 0.5rem;
-}
 
-.navbar__brand {
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  padding-inline: 1rem;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--gold);
-  text-decoration: none;
-}
+    display: flex;
 
-.nav-list {
-  display: flex;
-  flex-direction: column;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
+    flex-direction: column;
 
-.nav-list a {
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  padding-inline: 1rem;
-  color: #fff;
-  text-decoration: none;
-  border-radius: var(--radius);
-}
-
-/* Hover is never alone: keyboard focus gets the same treatment */
-.nav-list a:hover,
-.nav-list a:focus-visible {
-  background: var(--navy-hover);
-  outline: 2px solid var(--gold);
-}
-
-.navbar__brand:focus-visible {
-  outline: 2px solid var(--gold);
-  border-radius: var(--radius);
-}
-
-/* FOOTER (Grid, one column on phones) */
-.site-footer {
-  background: var(--navy);
-  color: #fff;
-  padding: 1.5rem 0 1rem;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.25rem;
-}
-
-.footer-col p {
-  margin: 0 0 0.5rem;
-  overflow-wrap: anywhere;
-}
-
-.footer-title {
-  margin: 0 0 0.5rem;
-  font-size: 1.125rem;
-  color: var(--gold);
-}
-
-.footer-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.footer-links a {
-  display: flex;
-  align-items: center;
-  min-height: 48px;
-  color: #fff;
-}
-
-.footer-links a:hover,
-.footer-links a:focus-visible {
-  color: var(--gold);
-}
-
-.footer-links a:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 2px;
-}
-
-.footer-copy {
-  margin-top: 1rem;
-  margin-bottom: 0;
-  font-size: 0.875rem;
-}
-
-
-/* ---- 2. 768px and up (tablets) --------------------------------------- */
-@media (min-width: 768px) {
-  /* Brand LEFT, links RIGHT, links in ONE row */
-  .navbar {
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-  }
 
-  .nav-list {
-    flex-direction: row;
+    gap: 1rem;
+
+    width: 100%;
+
+    padding: 1rem;
+
+}
+
+.navbar-brand {
+
+    font-size: 1.5rem;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+.nav-links {
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
     gap: 0.5rem;
-  }
+
 }
 
+.nav-links a {
 
-/* ---- 3. 1024px and up (laptops) -------------------------------------- */
-@media (min-width: 1024px) {
-  /* Footer: three equal columns */
-  .footer-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-  }
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 48px;
+
+    width: 100%;
+
+    text-decoration: none;
+
+    padding: 0.75rem;
+
+    border-radius: 0.5rem;
+
+    transition: background-color 0.2s ease;
+
 }
 
+.nav-links a:hover,
 
-/* ---- 4. 1280px and up ------------------------------------------------
-   Nothing new here: .container (base.css) keeps the content centered.
-   -------------------------------------------------------------------- */
+.nav-links a:focus-visible {
+
+    background-color: var(--light-blue);
+
+    outline: 2px solid var(--navy);
+
+    outline-offset: 2px;
