@@ -1,4 +1,9 @@
 node_modules
 dist
+.DS_Store
+*.log
+
+# Secrets: never commit real .env files (only the .env.example files)
 .env
-node_modules
+.env.local
+.env.*.local

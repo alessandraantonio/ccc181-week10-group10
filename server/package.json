@@ -1,16 +1,14 @@
 {
-  "name": "server",
+  "name": "campusconnect-api",
   "version": "1.0.0",
-  "description": "",
+  "private": true,
+  "description": "CampusConnect backend API (CCC181 Weeks 12-13)",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-  "dev": "nodemon index.js"
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "cors": "^2.8.6",
