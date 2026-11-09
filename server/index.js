@@ -4,6 +4,7 @@ import express from 'express';
 import cors from 'cors';
 import sessionsRouter from './routes/sessions.js';
 import usersRouter from './routes/users.js';
+import { notFound, errorHandler } from './middleware/errors.js';
 
 const PORT = process.env.PORT || 3000;
 // No slash at the end, exactly like the address in the browser bar.
@@ -30,6 +31,10 @@ app.get('/api/v1/health', (req, res) => {
 
 app.use('/api/v1/sessions', sessionsRouter); // POST /api/v1/sessions
 app.use('/api/v1/users', usersRouter); // GET  /api/v1/users/me
+
+// These two must come LAST.
+app.use(notFound);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`API running on http://localhost:${PORT}`);
