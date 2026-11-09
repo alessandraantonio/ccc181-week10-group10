@@ -1,1 +1,85 @@
+/* =======================================================================
+   MEMBER 3  |  auth.css  |  Part 2: messages, loading state, Welcome screen
+   Mobile-first: phone styles first (no media query), then min-width only.
+   48px buttons come from .btn (form.css). No sideways scrollbar at 360px.
+   ======================================================================= */
 
+
+/* ---- 1. PHONE (no media query) --------------------------------------- */
+
+/* Error / notice message above the form */
+.form-alert {
+  margin: 0 0 1rem;
+  padding: 0.75rem 1rem;
+  color: var(--error);
+  background: #fdecee;
+  border: 1px solid var(--error);
+  border-radius: var(--radius);
+  font-weight: 600;
+  overflow-wrap: anywhere; /* a long message must not cause sideways scrolling */
+}
+
+/* Loading state of the Sign in button */
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn--primary:disabled:hover {
+  background: var(--navy);
+}
+
+/* "Checking your session..." card shown while GET /users/me is answering */
+.loading-card {
+  text-align: center;
+}
+
+.loading-card p {
+  margin: 0;
+  padding: 1rem 0;
+  color: var(--muted);
+}
+
+/* Welcome screen */
+.welcome-card {
+  text-align: center;
+}
+
+.welcome-card__badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--success);
+  background: #e7f6ec;
+  font-size: 0.875rem;
+  font-weight: 700;
+  border-radius: 999px;
+}
+
+.welcome-card .login-card__title {
+  overflow-wrap: anywhere; /* a long name must not cause sideways scrolling */
+}
+
+.welcome-card__email {
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+
+/* ---- 2. 768px and up (tablets) --------------------------------------- */
+@media (min-width: 768px) {
+  /* Log out button stops being full width once there is room */
+  .welcome-card .btn--primary {
+    width: auto;
+    min-width: 12rem;
+  }
+}
+
+
+/* ---- 3. 1024px and up (laptops) -------------------------------------- */
+@media (min-width: 1024px) {
+  .welcome-card .login-card__title {
+    font-size: 2rem;
+  }
+}
