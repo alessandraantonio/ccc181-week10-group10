@@ -32,7 +32,11 @@ npm run build        # must finish with no errors before you submit
 | Member | Name | GitHub username | CSS file | What I did |
 | --- | --- | --- | --- | --- |
 | 1 (leader) |Alessandra M. Antonio | alessandraantonio | `base.css` | Wrote the base page layout: container, CSS Grid for .login-layout (1 column on phone, 2 columns from 1024px), brand panel styles, the 1280px max-width of 1200px, and added the viewport meta tag.|
+ feature/nav-patagoc
 | 2 | Atonette Patagoc | | `nav.css` | Wrote styles for .navbar and .site-footer in nav.css. On mobile (default), configured a vertical flexbox navbar with minimum 48px touch targets and full keyboard focus/hover states (--navy-hover, --gold), plus a 1-column footer grid. Added media queries so that from 768px the navbar lays out horizontally with space-between positioning, and from 1024px the footer expands into a 3-column grid. |
+
+| 2 | Antonette Patagoc |antonettepatagoc-cmd| `nav.css` | Wrote styles for .navbar and .site-footer in nav.css. On mobile (default), configured a vertical flexbox navbar with minimum 48px touch targets and full keyboard focus/hover states (--navy-hover, --gold), plus a 1-column footer grid. Added media queries so that from 768px the navbar lays out horizontally with space-between positioning, and from 1024px the footer expands into a 3-column grid. |
+
 | 3 | Cluden F. Bacalso | clud130 | `form.css` | Wrote the login card and form styles with Flexbox: stacked full-width fields with 48px inputs and 16px text, the Show/Hide button next to the password input, and primary and secondary buttons with hover and focus styles. From 768px the card is max-width 32rem and centered, the checkbox and "Forgot password?" sit side by side, and the two bottom buttons sit side by side. From 1024px the card gets 2.5rem padding. |
 
 ## Experiment 0: the page without the viewport tag
@@ -46,10 +50,10 @@ What changed **after** adding it?
 
 | Width | What must be true | Pass? |
 | --- | --- | --- |
-| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | |
-| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | |
-| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | |
-| 1280 px | Content centered and stops at 1200px. | |
+| 360 px | 1 column. Nav links stacked and 48px tall. Options and buttons stacked. Footer in 1 column. No sideways scrollbar. | Pass |
+| 768 px | Nav in one row (brand left, links right). Checkbox and link in one row. Two buttons side by side. | Pass |
+| 1024 px | Brand panel and login card side by side. Footer in 3 columns. Heading is larger. | Pass |
+| 1280 px | Content centered and stops at 1200px. | Pass |
 
 ### Breakpoints I observed
 
