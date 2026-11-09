@@ -1,8 +1,9 @@
-// GIVEN FILE (styled in form.css by Member 3). Do not edit.
-// The sign-in is a DEMO: nothing is sent to a server and nothing is saved.
-import { useState } from 'react';
+// Part 2: the form now calls the real API (src/api/auth.ts).
+// The Part 1 checks still run FIRST, so obviously wrong input never reaches the backend.
+import { useRef, useState } from 'react';
 import type { ChangeEvent, FormEvent } from 'react';
-import type { LoginErrors, LoginFormValues } from '../types';
+import { describeLoginError, login, saveToken } from '../api/auth';
+import type { LoginErrors, LoginFormValues, User } from '../types';
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -23,11 +24,18 @@ function validate(values: LoginFormValues): LoginErrors {
   return errors;
 }
 
-export default function LoginForm() {
+interface LoginFormProps {
+  onLoggedIn: (user: User) => void;
+  notice?: string; // a message to show when the form first appears (for example a network problem)
+}
+
+export default function LoginForm({ onLoggedIn, notice = '' }: LoginFormProps) {
   const [values, setValues] = useState<LoginFormValues>(INITIAL_VALUES);
   const [errors, setErrors] = useState<LoginErrors>({});
   const [showPassword, setShowPassword] = useState<boolean>(false);
-  const [signedInAs, setSignedInAs] = useState<string | null>(null);
+  const [alertMessage, setAlertMessage] = useState<string>(notice);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false); // the "Loading" state
+  const passwordRef = useRef<HTMLInputElement>(null);
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, type, value, checked } = event.target;
@@ -37,11 +45,29 @@ export default function LoginForm() {
     }));
   }
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (isSubmitting) return; // ignore a second click while waiting
+
+    // Part 1 checks first: an empty or badly formatted field stops here (no request is sent)
     const nextErrors = validate(values);
     setErrors(nextErrors);
-    setSignedInAs(Object.keys(nextErrors).length === 0 ? values.email : null);
+    setAlertMessage('');
+    if (Object.keys(nextErrors).length > 0) return;
+
+    setIsSubmitting(true);
+    try {
+      const { token, user } = await login(values.email, values.password);
+      saveToken(token); // Success: the Welcome screen appears ONLY because the API said 200
+      onLoggedIn(user);
+    } catch (error) {
+      // Error: show a clear message and stay on the form. The typed email stays.
+      setAlertMessage(describeLoginError(error));
+      setValues((prev) => ({ ...prev, password: '' }));
+      passwordRef.current?.focus();
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -51,7 +77,13 @@ export default function LoginForm() {
       </h2>
       <p className="login-card__subtitle">Use your school email to continue.</p>
 
-      <form className="login-form" onSubmit={handleSubmit} noValidate>
+      {alertMessage && (
+        <p className="form-alert" role="alert">
+          {alertMessage}
+        </p>
+      )}
+
+      <form className="login-form" onSubmit={handleSubmit} noValidate aria-busy={isSubmitting}>
         <div className="form-field">
           <label htmlFor="email">School email</label>
           <input
@@ -77,6 +109,7 @@ export default function LoginForm() {
           <label htmlFor="password">Password</label>
           <div className="password-row">
             <input
+              ref={passwordRef}
               id="password"
               name="password"
               type={showPassword ? 'text' : 'password'}
@@ -118,16 +151,9 @@ export default function LoginForm() {
           </a>
         </div>
 
-        <button type="submit" className="btn btn--primary">
-          Sign in
+        <button type="submit" className="btn btn--primary" disabled={isSubmitting}>
+          {isSubmitting ? 'Signing in...' : 'Sign in'}
         </button>
-
-        {signedInAs && (
-          <p className="form-success" role="status">
-            Demo only: {signedInAs} would be signed in here. Nothing was sent
-            or saved.
-          </p>
-        )}
       </form>
 
       <div className="login-card__divider">
