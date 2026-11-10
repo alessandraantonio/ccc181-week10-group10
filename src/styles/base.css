@@ -1,23 +1,13 @@
 /* =======================================================================
    MEMBER 1  |  base.css  |  Base, container, page layout, brand panel (CSS Grid + rem)
-   Branch: feature/base-<lastname>
-   ----------------------------------------------------------------------
-   MOBILE-FIRST RULES
-   1. Write the PHONE styles first, with NO media query.
-   2. Use min-width media queries ONLY. Never max-width.
-   3. Use rem or % (thin borders may use px).
-   4. Edit ONLY this file. Use the --variables from reset.css.
+   Branch: feature/base-antonio
+   Mobile-first: phone styles first (no media query), then min-width only.
    ======================================================================= */
 
 
-/* ---- STEP 0 (in index.html, not here) --------------------------------
-   Do Experiment 0 first. Then add this line inside <head> of index.html:
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   -------------------------------------------------------------------- */
+/* ---- 1. PHONE (no media query) --------------------------------------- */
 
-
-
-/* ---- 1. PHONE (no media query) ---- */
+/* Sticky-footer page shell: main grows so the footer sits at the bottom */
 .page {
   min-height: 100vh;
   display: flex;
@@ -25,21 +15,29 @@
 }
 
 .page > main {
-  flex: 1; 
+  flex: 1;
 }
 
+/* Full-width container with side padding (nav.css / form.css reuse it) */
 .container {
   width: 100%;
   padding-inline: 1rem;
 }
 
+/* Page layout (Grid): ONE column on phones */
 .login-layout {
   display: grid;
-  grid-template-columns: 1fr; 
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   padding-block: 1.5rem;
 }
 
+/* Let grid children shrink so nothing forces a sideways scrollbar */
+.login-layout > * {
+  min-width: 0;
+}
+
+/* Brand panel */
 .brand-panel {
   background: var(--navy);
   color: #fff;
@@ -50,24 +48,31 @@
 
 .brand-panel__badge {
   display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 0.25rem 0.75rem;
   background: var(--gold);
   color: var(--navy);
   font-weight: 700;
   font-size: 0.875rem;
-  padding: 0.25rem 0.75rem;
   border-radius: 999px;
 }
 
 .brand-panel__title {
+  margin: 0 0 0.75rem;
   font-size: 1.75rem;
 }
 
+.brand-panel__text {
+  margin: 0;
+}
+
+/* Phones show only what matters most: hide the extra list */
 .brand-panel__perks {
   display: none;
+}
 
 
-
-/* ---- 2. 768px and up (tablets) ---- */
+/* ---- 2. 768px and up (tablets) --------------------------------------- */
 @media (min-width: 768px) {
   .container {
     padding-inline: 2rem;
@@ -79,11 +84,11 @@
 }
 
 
-
-/* ---- 3. 1024px and up (laptops) ---- */
+/* ---- 3. 1024px and up (laptops) -------------------------------------- */
 @media (min-width: 1024px) {
+  /* Two equal columns: brand panel | login card */
   .login-layout {
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
     gap: 3rem;
     padding-block: 3rem;
@@ -98,19 +103,20 @@
     font-size: 2.5rem;
   }
 
+  /* The extra list is ADDED back */
   .brand-panel__perks {
-    display: block; 
-    margin-top: 1.5rem;
+    display: block;
+    margin: 1.5rem 0 0;
     padding-left: 1.25rem;
   }
 }
 
 
-/* ---- 4. 1280px and up (desktops) ---- */
+/* ---- 4. 1280px and up (desktops) ------------------------------------- */
 @media (min-width: 1280px) {
+  /* Stop stretching: centered, max 1200px */
   .container {
     max-width: 1200px;
     margin-inline: auto;
   }
 }
-
